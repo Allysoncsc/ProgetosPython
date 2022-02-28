@@ -40,4 +40,22 @@ def fizzBuzz(n):
         return n
 
 resposta = fizzBuzz(15)
-print(resposta)
+#print(resposta)
+
+#lista[0] = indice um lista[-1] = último indice
+#recebe uma tupla, não pode alterar os valores
+def desempacota(*args, **kwargs):
+    print(args)
+    print(kwargs['nome'],kwargs['sobrenome'])
+
+    idade = kwargs.get('idade')
+    if idade is not  None:
+        print(idade)
+    else:
+        print('Idade não enviada')
+
+
+lista = [1,2,3,4,5]
+lista2 = [6,7,8,9]
+desempacota(*lista, *lista2, nome = 'Allyson', sobrenome = 'Correia')
+print(*lista, sep='-')
