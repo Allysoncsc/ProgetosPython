@@ -29,3 +29,6 @@ else:
 
 if 'son' in nome:
     print(f'Existe son em {nome}')
+
+for n in range(10):
+    print(n)
