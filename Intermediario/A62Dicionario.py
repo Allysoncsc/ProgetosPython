@@ -56,3 +56,6 @@ for clientes_k, clientes_v in clientes.items():
         """\+t é para da tab na linha"""
         print(f'\t{dados_k} = {dados_v}')
 
+
+
+
