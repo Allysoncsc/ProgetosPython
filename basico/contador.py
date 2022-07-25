@@ -4,10 +4,10 @@ count - itertools
 
 from itertools import count
 
-contador =  count(start = 1, step = 1)
+contador =  count(start = 1, step = 0.1)
 
 for valor in contador:
-    print(valor)
+    print(round(valor))
 
     if valor>=11 or valor <= -10:
         break
