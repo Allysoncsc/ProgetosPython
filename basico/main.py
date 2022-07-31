@@ -1,3 +1,6 @@
+
+import random
+
 # This is a sample Python script.
 
 # Press Shift+F10 to execute it or replace it with your code.
@@ -14,3 +17,7 @@ if __name__ == '__main__':
     print_hi('PyCharm')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+
+for i in range(10):
+    print(random.randint(0,10))
