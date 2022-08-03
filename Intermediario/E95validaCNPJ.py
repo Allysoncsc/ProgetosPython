@@ -1,5 +1,5 @@
 import re
-
+import random
 
 def chama_funcoes(cnpj):
     cnpj = remover_caracteres(cnpj)
@@ -7,7 +7,7 @@ def chama_funcoes(cnpj):
     cnpj = remove_dois_digitos(cnpj)
     print(f' removeu os dois ultimos digitos = {cnpj} ')
     cnpj = digito_um(cnpj)
-    cnpj = digito_dois(cnpj)
+    cnpj = digito_um(cnpj)
     return cnpj
 
 
@@ -33,8 +33,12 @@ def adiciona_digito(cnpj, valor):
 
 
 def digito_um(cnpj):
-    size = len(cnpj)
-    m = 5
+
+    if len(cnpj) == 12:
+        m = 5
+    else:
+        m = 6
+
     total = 0
 
     for i in cnpj:
@@ -47,26 +51,18 @@ def digito_um(cnpj):
         m -= 1
 
     valor = (11 - (total % 11))
-    #print(valor)
     cnpj = adiciona_digito(cnpj,valor)
     return cnpj
 
+def gera():
+    dois_digitos = random.randint(10,99)
+    segundo_bloco = random.randint(100,999)
+    terceiro_bloco = random.randint(100,999)
+    quarto_bloco = '0001'
 
-def digito_dois(cnpj):
-    size = len(cnpj)
-    m = 6
-    total = 0
+    inicio_cnpj = f'{dois_digitos}{segundo_bloco}{terceiro_bloco}{quarto_bloco}00'
+    return inicio_cnpj
 
-    for i in cnpj:
-        numero = int(i)
-        if m == 1:
-            m = 9
-
-        total += m * numero
-        # print(f'{m} * {numero} = {m * numero}')
-        m -= 1
-
-    valor = (11 - (total % 11))
-    #print(valor)
-    cnpj = adiciona_digito(cnpj, valor)
-    return cnpj
+def formata(cnpj):
+    formatado = f'{cnpj[:2]}.{cnpj[2:5]}.{cnpj[5:8]}/{cnpj[8:12]}-{cnpj[12:14]}'
+    return formatado
