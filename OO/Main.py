@@ -12,7 +12,7 @@ print(p2.get_ano_nascimento())
 
 
 
-
+print(Pessoa.ano_atual)
 
 
 
