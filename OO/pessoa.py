@@ -8,7 +8,7 @@ class Pessoa:
 
     #parametro self não precisa ser enviado
     def __init__(self, nome, idade, comendo = False, falando = False):
-        self.nome = nome
+        self._nome = nome
         self.idade = idade
         self.comendo = comendo
         self.falando = falando
@@ -17,31 +17,31 @@ class Pessoa:
 
     def falar(self, assunto):
         if self.comendo:
-            print(f'{self.nome} não pode falar, pois está comendo')
+            print(f'{self._nome} não pode falar, pois está comendo')
             return
 
-        print(f'{self.nome} está falando sobre {assunto}')
+        print(f'{self._nome} está falando sobre {assunto}')
         self.falando = True
 
 
     def parar_falar(self):
         if not self.falando:
-            print(f'{self.nome} não está falando')
+            print(f'{self._nome} não está falando')
             return
-        print(f'{self.nome} parou de comer')
+        print(f'{self._nome} parou de comer')
         self.falando = False
 
 
     def comer(self, alimento):
         if self.comendo:
-            print(f'{self.nome} já está comendo')
+            print(f'{self._nome} já está comendo')
             return
 
         if self.falando:
-            print(f'{self.nome}  está falando')
+            print(f'{self._nome}  está falando')
             return
 
-        print(f'{self.nome} está comendo {alimento}')
+        print(f'{self._nome} está comendo {alimento}')
         self.comendo = True
 
 
@@ -49,9 +49,9 @@ class Pessoa:
 
     def parar_comer(self):
         if not self.comendo:
-            print(f'{self.nome} não está comendo')
+            print(f'{self._nome} não está comendo')
             return
-        print(f'{self.nome} parou de comer')
+        print(f'{self._nome} parou de comer')
         self.comendo = False
 
     def get_ano_nascimento(self):
