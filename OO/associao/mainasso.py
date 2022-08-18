@@ -5,3 +5,9 @@ escritor = Escritor('Allyson')
 print(escritor.nome)
 
 
+caneta = Caneta('Bic')
+
+escritor.ferramenta = caneta
+
+escritor.ferramenta.escrever()
+
