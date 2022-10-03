@@ -1,4 +1,4 @@
-from conta.conta import Conta
+from conta import Conta
 
 
 class ContaPoupanca(Conta):
@@ -8,7 +8,7 @@ class ContaPoupanca(Conta):
             return
         
         self._saldo -= valor
-        
+        self.detalhes()
         
 
 
