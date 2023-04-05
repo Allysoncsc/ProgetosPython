@@ -1,6 +1,6 @@
 
 cpf = input('Digite seu CPF:  ')
-novo_cpf = cpf[:9]
+novo_cpf = cpf[:9] #pega do indice 0 até o 8
 """""
 c = 10
 soma = 0
