@@ -1,10 +1,31 @@
 
 
+# class MyRepr:
+#     def __repr__(self) -> str:
+#         class_name = self.__class__.__name__
+#         class_dict = self.__dict__
+#         class_repr = f'{class_name}({class_dict})'
+#         return class_repr
+
+"""
+usando decorador para as classes terem função adiciona repr
+"""
+def adiciona_repr(cls):
+    def meu_repr(self):
+        class_name = self.__class__.__name__
+        class_dict = self.__dict__
+        class_repr = f'{class_name}({class_dict})'
+        return class_repr
+    cls.__repr__ = meu_repr
+    return cls
+
+@adiciona_repr
 class Motor:
     def __init__(self,nome,potencia):
         self.nome = nome
         self.potencia = potencia
 
+@adiciona_repr
 class Carro:
     def __init__(self,nome, fabricante):
         self.nome = nome
@@ -13,7 +34,7 @@ class Carro:
 
                 
 
-
+@adiciona_repr
 class Fabricante:
     def __init__(self,nome):
         self._nome = nome
