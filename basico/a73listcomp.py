@@ -9,4 +9,4 @@ produto, preco = carrinho[0]
 
 total = [(x,y) for x,y in carrinho]
 print(carrinho)
-
+print(total)
